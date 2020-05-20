@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordText;
     private FirebaseManager firebaseManager = new FirebaseManager();
     private Verify verify;
+
+    Button signInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,8 +18,6 @@ public class FirebaseManager {
     private static FirebaseManager instance = new FirebaseManager();
     private static FirebaseUser user;
 
-    public FirebaseManager () {}
-
     public static FirebaseManager getInstance() {
         return instance;
     }

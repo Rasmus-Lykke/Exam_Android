@@ -1,22 +1,22 @@
 package com.example.my_parking.model;
 
-import android.location.Location;
+public class ParkingSpots {
 
-public class Favorite {
-
-    private String title;
-    private String comment;
     private String id;
+    private String title;
+    private String description;
     private String latitude;
     private String longitude;
 
-    public Favorite(String title, String comment, String id, String latitude, String longitude) {
-        this.title = title;
-        this.comment = comment;
+    public ParkingSpots(String id, String title, String description, String latitude, String longitude) {
         this.id = id;
+        this.title = title;
+        this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
+
 
     public String getTitle() {
         return title;
@@ -26,12 +26,12 @@ public class Favorite {
         this.title = title;
     }
 
-    public String getComment() {
-        return comment;
+    public String getDescription() {
+        return description;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getId() {
@@ -42,8 +42,11 @@ public class Favorite {
         this.id = id;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public double getLatitude() {
+        if (latitude.length() > 0) {
+            return Double.parseDouble(latitude);
+        }
+        return 0;
     }
 
     public void setLatitude(String latitude) {
@@ -57,10 +60,5 @@ public class Favorite {
         return 0;
     }
 
-    public double setLongitude(String longitude) {
-        if (latitude.length() > 0) {
-            return Double.parseDouble(latitude);
-        }
-        return 0;
-    }
+    public void setLongitude(String longitude) { this.longitude = longitude; }
 }

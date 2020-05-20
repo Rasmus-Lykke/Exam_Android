@@ -1,0 +1,158 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.my_parking"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:5:5-79
+11-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:5:22-76
+12
+13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+14    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:13:5-79
+15-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:13:22-76
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:14:5-67
+16-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:14:22-64
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+21
+22    <application
+22-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:7:5-31:19
+23        android:allowBackup="true"
+23-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:8:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.1.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/bcfc0b80df78591183083cc148e1cf2c/core-1.1.0/AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:extractNativeLibs="false"
+27        android:icon="@mipmap/ic_launcher"
+27-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:9:9-43
+28        android:label="@string/app_name"
+28-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:10:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:11:9-54
+30        android:supportsRtl="true"
+30-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:12:9-35
+31        android:testOnly="true"
+32        android:theme="@style/AppTheme" >
+32-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:13:9-40
+33        <activity android:name="com.example.my_parking.CreateParkingSpotActivity" />
+33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:9-72
+33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:19-60
+34
+35        <meta-data
+35-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:16:9-18:55
+36            android:name="com.google.android.geo.API_KEY"
+36-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:17:13-58
+37            android:value="@string/google_maps_key" />
+37-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:18:13-52
+38
+39        <activity
+39-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:20:9-22:59
+40            android:name="com.example.my_parking.MapsActivity"
+40-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:21:13-41
+41            android:label="@string/title_activity_maps" />
+41-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:22:13-56
+42        <activity android:name="com.example.my_parking.LoginActivity" >
+42-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:23:9-29:20
+42-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:23:19-48
+43            <intent-filter>
+43-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:24:13-28:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:25:17-69
+44-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:25:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:27:17-77
+46-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:27:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity android:name="com.example.my_parking.MainActivity" />
+49-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:30:9-50
+49-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:30:19-47
+50
+51        <service
+51-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:17:9-23:19
+52            android:name="com.google.firebase.components.ComponentDiscoveryService"
+52-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:18:13-84
+53            android:directBootAware="true"
+53-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+54            android:exported="false" >
+54-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:19:13-37
+55            <meta-data
+55-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:20:13-22:85
+56                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+56-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:21:17-111
+57                android:value="com.google.firebase.components.ComponentRegistrar" />
+57-->[com.google.firebase:firebase-firestore:21.4.3] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/1dc1d8b46e8da592d1f149b8329b2922/jetified-firebase-firestore-21.4.3/AndroidManifest.xml:22:17-82
+58            <meta-data
+58-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:36:13-38:85
+59                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+59-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:37:17-109
+60                android:value="com.google.firebase.components.ComponentRegistrar" />
+60-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:38:17-82
+61        </service>
+62
+63        <activity
+63-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:24:9-31:50
+64            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+64-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:25:13-85
+65            android:excludeFromRecents="true"
+65-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:26:13-46
+66            android:exported="true"
+66-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:27:13-36
+67            android:launchMode="singleTask"
+67-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:28:13-44
+68            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+68-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:29:13-102
+69            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Needs to be explicitly declared on P+ -->
+69-->[com.google.firebase:firebase-auth:19.3.1] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/a965e02da0dc74b3cb82526fa169fefe/jetified-firebase-auth-19.3.1/AndroidManifest.xml:30:13-72
+70        <uses-library
+70-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+71            android:name="org.apache.http.legacy"
+71-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+72            android:required="false" />
+72-->[com.google.android.gms:play-services-maps:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/7568ba76e7ca3967850522f169ef779d/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+73
+74        <provider
+74-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+75            android:name="com.google.firebase.provider.FirebaseInitProvider"
+75-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+76            android:authorities="com.example.my_parking.firebaseinitprovider"
+76-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+77            android:exported="false"
+77-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+78            android:initOrder="100" />
+78-->[com.google.firebase:firebase-common:19.3.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+79
+80        <activity
+80-->[com.google.android.gms:play-services-base:17.1.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+81-->[com.google.android.gms:play-services-base:17.1.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+82            android:exported="false"
+82-->[com.google.android.gms:play-services-base:17.1.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[com.google.android.gms:play-services-base:17.1.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+84
+85        <meta-data
+85-->[com.google.android.gms:play-services-basement:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/164bb505b81f338baa0db13edd04c1d1/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+86            android:name="com.google.android.gms.version"
+86-->[com.google.android.gms:play-services-basement:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/164bb505b81f338baa0db13edd04c1d1/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+87            android:value="@integer/google_play_services_version" />
+87-->[com.google.android.gms:play-services-basement:17.0.0] /home/rasmusl/.gradle/caches/transforms-2/files-2.1/164bb505b81f338baa0db13edd04c1d1/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+88    </application>
+89
+90</manifest>

@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.my_parking.adapter.MyAdapter;
 import com.example.my_parking.storage.FirebaseRepo;
@@ -28,12 +30,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myAdapter = new MyAdapter();
         recyclerView.setAdapter(myAdapter); // Assign the adapter to recyclerView
         FirebaseRepo.adapter = myAdapter;
-
     }
 
     @Override
     public void onClick(View v) {
         int position = (int) v.getTag();
         System.out.println(position);
+    }
+
+    public void newParkingSpot(View view) {
+        if (MapsActivity.currentLocation == null) {
+            Toast.makeText(getApplicationContext(), "Make sure your location shows in one of the favorite parking spots", Toast.LENGTH_SHORT).show();
+        } else {
+            // Create new intent. Get the context from the view passed as a param
+            Intent intent = new Intent(this, CreateParkingSpotActivity.class);
+            // Again use the view to get the context in order to start activity
+            startActivity(intent);
+        }
     }
 }

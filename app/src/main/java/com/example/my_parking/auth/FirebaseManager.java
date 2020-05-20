@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.my_parking.storage.FirebaseRepo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -15,12 +16,8 @@ import com.example.my_parking.LoginActivity;
 public class FirebaseManager {
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    private static FirebaseManager instance = new FirebaseManager();
     private static FirebaseUser user;
 
-    public static FirebaseManager getInstance() {
-        return instance;
-    }
 
     public void signIn(String email, String password, final LoginActivity activity) {
         firebaseAuth.signInWithEmailAndPassword(email, password)

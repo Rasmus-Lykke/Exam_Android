@@ -1,4 +1,4 @@
-/app/srcres/values/google_maps_api.xml
+*/google_maps_api.xml
 *.iml
 .gradle
 /local.properties

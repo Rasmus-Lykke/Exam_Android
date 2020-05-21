@@ -353,11 +353,11 @@
                 {
                     "source": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/res/values/google_maps_api.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "22",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "853",
                         "endColumns": "137",
-                        "endOffsets": "149"
+                        "endOffsets": "986"
                     },
                     "to": {
                         "startLines": "448",

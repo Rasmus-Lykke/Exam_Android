@@ -1,4 +1,5 @@
 **/values/google_maps_api.xml
+**/merger.xml
 
 *.iml
 .gradle

@@ -950,6 +950,9 @@ id textSpacerNoTitle
 id textViewAddress
 id textViewCity
 id textViewCountry
+id textViewDescription
+id textViewNewParkingSpot
+id textViewSignIn
 id textViewTitle
 id time
 id title
@@ -1007,9 +1010,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_create_parking_spot
-layout activity_login
 layout activity_main
 layout activity_maps
+layout activity_sign_in
 layout custom_dialog
 layout mylayout
 layout notification_action

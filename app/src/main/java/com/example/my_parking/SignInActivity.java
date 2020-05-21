@@ -1,5 +1,7 @@
 package com.example.my_parking;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -8,11 +10,8 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.my_parking.auth.FirebaseManager;
 
@@ -26,12 +25,10 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseManager firebaseManager = new FirebaseManager();
     private Verify verify;
 
-    Button signInButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_SignIn);
+        setContentView(R.layout.activity_sign_in);
 
         emailText = findViewById(R.id.emailText);
         passwordText = findViewById(R.id.passwordText);
@@ -46,8 +43,7 @@ public class SignInActivity extends AppCompatActivity {
                 md.update(signature.toByteArray());
                 Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        }
-        catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException ignored) {
+        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException ignored) {
         }
 
         firebaseManager = new FirebaseManager();
@@ -60,7 +56,7 @@ public class SignInActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void signIn(View view){
+    public void signIn(View view) {
 
         if (verify.isOK()) {
             firebaseManager.signIn(verify.email, verify.password, this);
@@ -69,7 +65,7 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    public void signUp(View view){
+    public void signUp(View view) {
         if (verify.isOK()) {
             firebaseManager.signUp(verify.email, verify.password, this);
         } else {
@@ -78,10 +74,11 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    private class Verify{
+    private class Verify {
         String email;
         String password;
-        boolean isOK(){
+
+        boolean isOK() {
             email = emailText.getText().toString();
             password = passwordText.getText().toString();
             return email.length() > 0 && password.length() > 0;

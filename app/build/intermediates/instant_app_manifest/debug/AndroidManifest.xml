@@ -31,6 +31,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.my_parking.SignInActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.example.my_parking.CreateParkingSpotActivity" />
 
         <meta-data
@@ -40,13 +47,6 @@
         <activity
             android:name="com.example.my_parking.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name="com.example.my_parking.LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name="com.example.my_parking.MainActivity" />
 
         <service

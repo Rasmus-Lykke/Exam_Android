@@ -5,17 +5,22 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.my_parking.SignInActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.example.my_parking.SignInActivity;
 
 public class FirebaseManager {
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private static FirebaseUser user;
+    private static FirebaseManager instance = new FirebaseManager();
+
+    public static FirebaseManager getInstance() {
+        return instance;
+    }
 
 
     public void signIn(String email, String password, final SignInActivity activity) {

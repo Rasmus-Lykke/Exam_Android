@@ -49,37 +49,37 @@
 31        android:testOnly="true"
 32        android:theme="@style/AppTheme" >
 32-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:13:9-40
-33        <activity android:name="com.example.my_parking.CreateParkingSpotActivity" />
-33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:9-72
-33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:19-60
-34
-35        <meta-data
-35-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:16:9-18:55
-36            android:name="com.google.android.geo.API_KEY"
-36-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:17:13-58
-37            android:value="@string/google_maps_key" />
-37-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:18:13-52
-38
-39        <activity
-39-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:20:9-22:59
-40            android:name="com.example.my_parking.MapsActivity"
-40-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:21:13-41
-41            android:label="@string/title_activity_maps" />
-41-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:22:13-56
-42        <activity android:name="com.example.my_parking.LoginActivity" >
-42-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:23:9-29:20
-42-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:23:19-48
-43            <intent-filter>
-43-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:24:13-28:29
-44                <action android:name="android.intent.action.MAIN" />
-44-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:25:17-69
-44-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:25:25-66
+33        <activity android:name="com.example.my_parking.SignInActivity" >
+33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:9-20:20
+33-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:14:19-49
+34            <intent-filter>
+34-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:15:13-19:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:16:17-69
+35-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:16:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:18:17-77
+37-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:18:27-74
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.example.my_parking.CreateParkingSpotActivity" />
+40-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:21:9-63
+40-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:21:19-60
+41
+42        <meta-data
+42-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:23:9-25:55
+43            android:name="com.google.android.geo.API_KEY"
+43-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:24:13-58
+44            android:value="@string/google_maps_key" />
+44-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:25:13-52
 45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:27:17-77
-46-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:27:27-74
-47            </intent-filter>
-48        </activity>
+46        <activity
+46-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:27:9-29:59
+47            android:name="com.example.my_parking.MapsActivity"
+47-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:28:13-41
+48            android:label="@string/title_activity_maps" />
+48-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:29:13-56
 49        <activity android:name="com.example.my_parking.MainActivity" />
 49-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:30:9-50
 49-->/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/AndroidManifest.xml:30:19-47

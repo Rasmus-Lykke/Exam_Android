@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.my_parking.adapter.MyAdapter;
+import com.example.my_parking.auth.FirebaseManager;
 import com.example.my_parking.storage.FirebaseRepo;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,5 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Again use the view to get the context in order to start activity
             startActivity(intent);
         }
+    }
+
+    public void signOut(View view){
+        try {
+            FirebaseManager.getInstance().signOut();
+            finish();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+
     }
 }

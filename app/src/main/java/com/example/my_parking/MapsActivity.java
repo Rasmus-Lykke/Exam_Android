@@ -6,12 +6,14 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LocationListener listener; // Listens for location updates
     LocationManager manager;
     public static LatLng currentLocation;
+    public LatLng parkingLocation;
 
     public static int index;
 
@@ -154,10 +157,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void updateMarkers() {
         System.out.println("=======>> Updating markers");
         mMap.clear();
-        LatLng favoriteLocation = (new LatLng(
+        parkingLocation = (new LatLng(
                 FirebaseRepo.parkingSpots.get(index).getLatitude(),
                 FirebaseRepo.parkingSpots.get(index).getLongitude()));
-        mMap.addMarker(new MarkerOptions().position(favoriteLocation).
+        mMap.addMarker(new MarkerOptions().position(parkingLocation).
                 title(FirebaseRepo.parkingSpots.get(index).getTitle()));
 
         if (currentLocation != null) {
@@ -194,6 +197,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         FirebaseRepo.editParkingSpot(view, index,
                 editTextTitle.getText().toString(),
                 editTextDescription.getText().toString());
+    }
+
+    public void openInMaps(View view){
+
+        if (parkingLocation != null) {
+            startActivity(
+                    new Intent(
+                            android.content.Intent.ACTION_VIEW,
+                            Uri.parse("geo:" +
+                                    parkingLocation.latitude + "," +
+                                    parkingLocation.longitude + "?q=" +
+                                    parkingLocation.latitude + "," +
+                                    parkingLocation.longitude )));
+        }
+
     }
 
 

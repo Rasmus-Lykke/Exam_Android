@@ -825,6 +825,7 @@ id bottom
 id buttonChangeMap
 id buttonCreate
 id buttonEdit
+id buttonInMaps
 id buttonPanel
 id center_vertical
 id chains

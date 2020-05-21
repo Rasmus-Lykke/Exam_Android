@@ -44,6 +44,10 @@
         "source": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/build/intermediates/res/merged/debug/drawable_roundedbutton.xml.flat",
+        "source": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/res/drawable/roundedbutton.xml"
+    },
+    {
         "merged": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/home/rasmusl/Development/Exam_2020/Exam_Android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },

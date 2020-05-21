@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     EditText editTextTitle;
     EditText editTextDescription;
     TextView textViewAddress;
+    TextView textViewCity;
+    TextView textViewCountry;
+    Button buttonChangeMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +68,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         editTextTitle.setText(FirebaseRepo.parkingSpots.get(index).getTitle());
         editTextDescription = findViewById(R.id.editTextDescription);
         editTextDescription.setText(FirebaseRepo.parkingSpots.get(index).getDescription());
-        textViewAddress = findViewById(R.id.textViewAddress);
+        textViewCity = findViewById(R.id.textViewCity);
+        textViewAddress =  findViewById(R.id.textViewAddress);
+        textViewCountry = findViewById(R.id.textViewCountry);
 
+        buttonChangeMap = findViewById(R.id.buttonChangeMap);
+        buttonChangeMap.setText("Satellite");
 
         createListener();
 
@@ -100,25 +108,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     if (listAddresses != null && listAddresses.size() > 0) {
                         String address = "";
+                        String city = "";
+                        String country = "";
 
                         if (listAddresses.get(0).getThoroughfare() != null) {
                             address += listAddresses.get(0).getThoroughfare() + " ";
                         }
 
                         if (listAddresses.get(0).getLocality() != null) {
-                            address += listAddresses.get(0).getLocality() + " ";
+                            city += listAddresses.get(0).getLocality() + ", ";
+                            System.out.println("Locality: " + listAddresses.get(0).getLocality());
+
                         }
 
                         if (listAddresses.get(0).getPostalCode() != null) {
-                            address += listAddresses.get(0).getPostalCode() + " ";
+                            city += listAddresses.get(0).getPostalCode() + " ";
+                            System.out.println("Postal code: " + listAddresses.get(0).getPostalCode());
+
                         }
 
-                        if (listAddresses.get(0).getAdminArea() != null) {
-                            address += listAddresses.get(0).getAdminArea();
+                        if (listAddresses.get(0).getCountryName() != null) {
+                            country += listAddresses.get(0).getCountryName();
+                            System.out.println("Admin area: " + listAddresses.get(0).getAdminArea());
+
                         }
 
-                        System.out.println("!!!!!!!!!!!!!!!!!!!!" + address);
+                        System.out.println("=======>> " + address);
                         textViewAddress.setText(address);
+                        textViewCity.setText(city);
+                        textViewCountry.setText(country);
                         updateMarkers();
                     }
 
@@ -187,8 +205,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
             mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            buttonChangeMap.setText("Normal");
         } else {
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            buttonChangeMap.setText("Satellite");
         }
     }
 

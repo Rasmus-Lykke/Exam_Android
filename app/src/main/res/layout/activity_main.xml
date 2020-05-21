@@ -24,18 +24,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:backgroundTint="#4285F4"
         android:onClick="signOut"
         android:text="Sign out"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/roundedbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/newFavoriteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_margin="20dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#0F9D58"
         android:onClick="newParkingSpot"
-        android:text="New favorite"
+        android:text="+"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

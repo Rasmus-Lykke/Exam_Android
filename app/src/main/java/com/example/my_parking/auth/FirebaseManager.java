@@ -6,11 +6,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.my_parking.SignInActivity;
+import com.example.my_parking.storage.FirebaseRepo;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.concurrent.TimeUnit;
 
 public class FirebaseManager {
 
@@ -21,23 +25,30 @@ public class FirebaseManager {
     public static FirebaseManager getInstance() {
         return instance;
     }
-
+    boolean signingIn = true;
+    boolean result;
 
     public void signIn(String email, String password, final SignInActivity activity) {
+
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            result = true;
+                            signingIn = false;
                             user = firebaseAuth.getCurrentUser();
                             activity.startMainActivity();
                             System.out.println("Sign in success! " + task.getResult().getUser().getEmail());
                         } else {
+                            result = false;
+                            signingIn = false;
                             user = null;
                             System.out.println("Sign in failed! " + task.getException());
                         }
                     }
                 });
+
     }
 
     public void signUp(String email, String password, final Context context){
@@ -59,6 +70,7 @@ public class FirebaseManager {
 
     public void signOut(){
         user = null;
+        signingIn = true;
         firebaseAuth.signOut();
     }
 }

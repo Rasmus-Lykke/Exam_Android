@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             FirebaseManager.getInstance().signOut();
             finish();
+            // Create new intent. Get the context from the view passed as a param
+            Intent intent = new Intent(this, SignInActivity.class);
+            // Again use the view to get the context in order to start activity
+            startActivity(intent);
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }

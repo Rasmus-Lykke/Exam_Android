@@ -11,6 +11,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.my_parking.auth.FirebaseManager;
@@ -22,6 +23,7 @@ public class SignInActivity extends AppCompatActivity {
 
     private EditText emailText;
     private EditText passwordText;
+    private TextView textViewInfo;
     private FirebaseManager firebaseManager = new FirebaseManager();
     private Verify verify;
 
@@ -32,6 +34,8 @@ public class SignInActivity extends AppCompatActivity {
 
         emailText = findViewById(R.id.emailText);
         passwordText = findViewById(R.id.passwordText);
+        textViewInfo = findViewById(R.id.textViewInfo);
+
 
         // Get key hash
         try {
@@ -60,6 +64,11 @@ public class SignInActivity extends AppCompatActivity {
 
         if (verify.isOK()) {
             firebaseManager.signIn(verify.email, verify.password, this);
+
+            passwordText.setText("");
+            textViewInfo.setVisibility(View.VISIBLE);
+
+
         } else {
             System.out.println("==> Error here");
         }

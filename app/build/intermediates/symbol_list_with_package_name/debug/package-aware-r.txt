@@ -951,6 +951,7 @@ id textViewAddress
 id textViewCity
 id textViewCountry
 id textViewDescription
+id textViewInfo
 id textViewNewParkingSpot
 id textViewSignIn
 id textViewTitle

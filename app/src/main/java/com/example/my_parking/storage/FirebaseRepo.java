@@ -41,7 +41,6 @@ public class FirebaseRepo {
     }
 
     private static void startFavoriteListener() {
-
         db.collection(favoritesPath)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -65,7 +64,6 @@ public class FirebaseRepo {
                         adapter.notifyDataSetChanged();
                     }
                 });
-
     }
 
 
@@ -73,7 +71,7 @@ public class FirebaseRepo {
         String key = parkingSpots.get(index).getId();
         DocumentReference documentReference = FirebaseRepo.db.collection(favoritesPath).document(key);
         documentReference.delete();
-        adapter.notifyDataSetChanged();
+        startFavoriteListener();
     }
 
 
@@ -92,7 +90,6 @@ public class FirebaseRepo {
 
         System.out.println("Update successful");
         Toast.makeText(view.getContext(), "Update successful!", Toast.LENGTH_SHORT).show();
-
     }
 
 
@@ -110,6 +107,7 @@ public class FirebaseRepo {
         Intent intent = new Intent(view.getContext(), MainActivity.class);
         // Again use the view to get the context in order to start activity
         view.getContext().startActivity(intent);
+        startFavoriteListener();
     }
 
 }

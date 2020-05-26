@@ -1,5 +1,4 @@
-**/values/google_maps_api.xml
-**/merger.xml
+**/google_maps_api.xml
 
 *.iml
 .gradle
@@ -11,7 +10,7 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
+./app/build
 /captures
 .externalNativeBuild
 .cxx
@@ -39,7 +38,7 @@ out/
 
 # Gradle files
 .gradle/
-build/
+build/*
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -103,3 +102,4 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+/app/build/

@@ -6,18 +6,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.my_parking.MainActivity;
+import com.example.my_parking.auth.FirebaseManager;
 import com.example.my_parking.model.ParkingSpots;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -40,8 +37,9 @@ public class FirebaseRepo {
         startFavoriteListener();
     }
 
-    private static void startFavoriteListener() {
+    public static void startFavoriteListener() {
         db.collection(favoritesPath)
+                .whereEqualTo("user_id", FirebaseManager.getUser().getUid()) // Get the paring spots where the current user is equal to the user id in the parking spot
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -49,6 +47,7 @@ public class FirebaseRepo {
                         if (task.isSuccessful()) {
                             parkingSpots.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
+
                                 FirebaseRepo.parkingSpots.add(new ParkingSpots(
                                         document.getId(),
                                         document.get("title").toString(),
@@ -65,7 +64,6 @@ public class FirebaseRepo {
                     }
                 });
     }
-
 
     public static void deleteFavorite(int index) {
         String key = parkingSpots.get(index).getId();
@@ -93,7 +91,7 @@ public class FirebaseRepo {
     }
 
 
-    public static void saveNewNote(View view, String title, String description, String lat, String lng) {
+    public static void saveNewNote(View view, String title, String description, String lat, String lng, String userId) {
         DocumentReference documentReference = db.collection(favoritesPath).document();
 
         Map<String, String> map = new HashMap<>();
@@ -101,6 +99,7 @@ public class FirebaseRepo {
         map.put("description", description);
         map.put("latitude", lat);
         map.put("longitude", lng);
+        map.put("user_id", userId);
         documentReference.set(map);
 
         // Create new intent. Get the context from the view passed as a param

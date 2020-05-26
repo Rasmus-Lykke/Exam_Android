@@ -64,14 +64,15 @@ public class SignInActivity extends AppCompatActivity {
 
         if (verify.isOK()) {
             firebaseManager.signIn(verify.email, verify.password, this);
-
-            passwordText.setText("");
-            textViewInfo.setVisibility(View.VISIBLE);
-
-
         } else {
             System.out.println("==> Error here");
         }
+    }
+
+    public void signInUnsuccessful() {
+        // Should only happen if sign in was unsuccessful
+        passwordText.setText("");
+        textViewInfo.setVisibility(View.VISIBLE);
     }
 
     public void signUp(View view) {

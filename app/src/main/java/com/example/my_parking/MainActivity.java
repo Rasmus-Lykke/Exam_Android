@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myAdapter = new MyAdapter();
         recyclerView.setAdapter(myAdapter); // Assign the adapter to recyclerView
         FirebaseRepo.adapter = myAdapter;
+
+        if (FirebaseRepo.parkingSpots.size() < 1) {
+            FirebaseRepo.startFavoriteListener();
+        }
     }
 
     @Override
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void signOut(View view){
         try {
             FirebaseManager.getInstance().signOut();
-            finish();
+            FirebaseRepo.parkingSpots.clear();
             // Create new intent. Get the context from the view passed as a param
             Intent intent = new Intent(this, SignInActivity.class);
             // Again use the view to get the context in order to start activity

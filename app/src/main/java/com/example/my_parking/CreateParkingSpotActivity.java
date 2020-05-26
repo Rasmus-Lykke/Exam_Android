@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.my_parking.auth.FirebaseManager;
 import com.example.my_parking.storage.FirebaseRepo;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -39,7 +40,8 @@ public class CreateParkingSpotActivity extends AppCompatActivity {
         FirebaseRepo.saveNewNote(view,
                 editTextTitle.getText().toString(),
                 editTextDescription.getText().toString(),
-                latitude, longitude);
+                latitude, longitude,
+                FirebaseManager.getUser().getUid());
 
     }
 }

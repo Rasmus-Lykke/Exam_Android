@@ -11,8 +11,8 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,11 +24,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/roundedbutton"
         android:backgroundTint="#4285F4"
         android:onClick="changeMapType"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonInMaps"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="satellite" />
 
     <EditText
         android:id="@+id/editTextDescription"
@@ -57,24 +60,29 @@
 
     <Button
         android:id="@+id/buttonEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@android:color/darker_gray"
+        android:drawableBottom="@drawable/save_icon"
         android:onClick="editParkingSpot"
-        android:text="Save changes"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextDescription"
         app:layout_constraintTop_toTopOf="@+id/editTextDescription" />
 
     <Button
         android:id="@+id/buttonInMaps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="116dp"
+        android:layout_height="43dp"
         android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/roundedbutton"
         android:backgroundTint="#0F9D58"
         android:onClick="openInMaps"
         android:text="Open in maps"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChangeMap"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView

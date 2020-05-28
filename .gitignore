@@ -103,4 +103,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 /app/build/
-/.idea_test/
+/.idea/

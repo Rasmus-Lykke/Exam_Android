@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.my_parking.auth.FirebaseManager;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -216,7 +217,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         FirebaseRepo.editParkingSpot(view, index,
                 editTextTitle.getText().toString(),
-                editTextDescription.getText().toString());
+                editTextDescription.getText().toString(),
+                FirebaseManager.getUser().getUid());
     }
 
     public void openInMaps(View view){
@@ -233,6 +235,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     }
-
 
 }

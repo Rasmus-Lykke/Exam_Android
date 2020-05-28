@@ -73,7 +73,7 @@ public class FirebaseRepo {
     }
 
 
-    public static void editParkingSpot(View view, int index, String title, String description) {
+    public static void editParkingSpot(View view, int index, String title, String description, String userId) {
         String id = parkingSpots.get(index).getId();
         // Get a Firebase ref. to the current note object.
         DocumentReference documentReference = db.collection(favoritesPath).document(id);
@@ -83,11 +83,13 @@ public class FirebaseRepo {
         map.put("description", description);
         map.put("latitude", String.valueOf(parkingSpots.get(index).getLatitude()));
         map.put("longitude", String.valueOf(parkingSpots.get(index).getLongitude()));
+        map.put("user_id", userId);
 
         documentReference.set(map);
 
         System.out.println("Update successful");
         Toast.makeText(view.getContext(), "Update successful!", Toast.LENGTH_SHORT).show();
+        startFavoriteListener();
     }
 
 

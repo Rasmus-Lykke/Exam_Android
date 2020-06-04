@@ -14,19 +14,18 @@ import com.example.my_parking.auth.FirebaseManager;
 import com.example.my_parking.storage.FirebaseRepo;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     public static final String INDEX_KEY = "INDEX_KEY";
 
     MyAdapter myAdapter;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         myAdapter = new MyAdapter();
@@ -38,11 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        int position = (int) v.getTag();
-        System.out.println(position);
-    }
 
     public void newParkingSpot(View view) {
         if (MapsActivity.currentLocation == null) {

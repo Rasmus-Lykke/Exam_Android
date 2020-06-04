@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return FirebaseRepo.parkingSpots.size(); // Start with dummy number of items
+        return FirebaseRepo.parkingSpots.size();
     }
 
 

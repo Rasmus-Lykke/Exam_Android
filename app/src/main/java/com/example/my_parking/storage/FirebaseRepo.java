@@ -27,7 +27,7 @@ import static android.content.ContentValues.TAG;
 
 public class FirebaseRepo {
 
-    public static List<ParkingSpots> parkingSpots = new ArrayList<>();
+
 
     private final static String favoritesPath = "parking_spots";
     private static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -37,9 +37,11 @@ public class FirebaseRepo {
         startFavoriteListener();
     }
 
+    public static List<ParkingSpots> parkingSpots = new ArrayList<>();
+
     public static void startFavoriteListener() {
         db.collection(favoritesPath)
-                .whereEqualTo("user_id", FirebaseManager.getUser().getUid()) // Get the paring spots where the current user is equal to the user id in the parking spot
+                .whereEqualTo("user_id", FirebaseManager.getUser().getUid())                    // Get the parking spots where the current user is equal to the user id in the parking spot
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -93,7 +95,8 @@ public class FirebaseRepo {
     }
 
 
-    public static void saveNewNote(View view, String title, String description, String lat, String lng, String userId) {
+    public static void saveNewNote(View view, String title, String description,
+                                   String lat, String lng, String userId) {
         DocumentReference documentReference = db.collection(favoritesPath).document();
 
         Map<String, String> map = new HashMap<>();

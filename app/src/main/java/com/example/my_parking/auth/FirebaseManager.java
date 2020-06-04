@@ -26,7 +26,7 @@ public class FirebaseManager {
 
     private FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
-    private static FirebaseUser user;
+
     private static FirebaseManager instance = new FirebaseManager();
 
     public static FirebaseManager getInstance() {
@@ -34,16 +34,16 @@ public class FirebaseManager {
     }
 
 
+    private static FirebaseUser user;
+
     public void signIn(String email, String password, final SignInActivity activity) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
                             user = firebaseAuth.getCurrentUser();
                             activity.startMainActivity();
-                            System.out.println("Sign in success! " + task.getResult().getUser().getEmail());
                         } else {
                             user = null;
                             activity.signInUnsuccessful();
@@ -55,7 +55,6 @@ public class FirebaseManager {
 
 
     public void signUp(String email, String password, final Context context){
-
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -73,7 +72,6 @@ public class FirebaseManager {
 
     public void signOut(){
         user = null;
-
         firebaseAuth.signOut();
     }
 

@@ -61,6 +61,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void signIn(View view) {
+
         if (verify.isOK()) {
             firebaseManager.signIn(verify.email, verify.password, this);
         } else {

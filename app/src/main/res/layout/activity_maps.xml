@@ -30,7 +30,8 @@
         android:onClick="changeMapType"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/buttonInMaps"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="satellite" />
 
     <EditText
         android:id="@+id/editTextDescription"

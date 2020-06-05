@@ -69,19 +69,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         editTextTitle.setText(FirebaseRepo.parkingSpots.get(index).getTitle());
         editTextDescription = findViewById(R.id.editTextDescription);
         editTextDescription.setText(FirebaseRepo.parkingSpots.get(index).getDescription());
-
-
         textViewCity = findViewById(R.id.textViewCity);
         textViewAddress =  findViewById(R.id.textViewAddress);
         textViewCountry = findViewById(R.id.textViewCountry);
 
-
         buttonChangeMap = findViewById(R.id.buttonChangeMap);
         buttonChangeMap.setText("Satellite");
 
+        createListener();
 
         handlePermissionUpdate();
-        createListener();
     }
 
     private void handlePermissionUpdate() {
@@ -122,39 +119,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (listAddresses.get(0).getLocality() != null) {
                             city += listAddresses.get(0).getLocality() + ", ";
                             System.out.println("Locality: " + listAddresses.get(0).getLocality());
+
                         }
 
                         if (listAddresses.get(0).getPostalCode() != null) {
                             city += listAddresses.get(0).getPostalCode() + " ";
                             System.out.println("Postal code: " + listAddresses.get(0).getPostalCode());
+
                         }
 
                         if (listAddresses.get(0).getCountryName() != null) {
                             country += listAddresses.get(0).getCountryName();
                             System.out.println("Admin area: " + listAddresses.get(0).getAdminArea());
+
                         }
 
+                        System.out.println("=======>> " + address);
                         textViewAddress.setText(address);
                         textViewCity.setText(city);
                         textViewCountry.setText(country);
-
                         updateMarkers();
                     }
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
             }
 
 
             @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) { }
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+
+            }
 
             @Override
-            public void onProviderEnabled(String provider) { }
+            public void onProviderEnabled(String provider) {
+
+            }
 
             @Override
-            public void onProviderDisabled(String provider) { }
+            public void onProviderDisabled(String provider) {
+
+            }
         };
     }
 
@@ -186,7 +193,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(56.2928882, 10.4692549), 6));
+        Toast.makeText(this, "Searching for location, please wait", Toast.LENGTH_SHORT).show();
+        updateMarkers();
+    }
+
     public void changeMapType(View view) {
+
         if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL) {
             mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
             buttonChangeMap.setText("Normal");
@@ -197,13 +214,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void editParkingSpot(View view){
+
         FirebaseRepo.editParkingSpot(view, index,
                 editTextTitle.getText().toString(),
                 editTextDescription.getText().toString(),
                 FirebaseManager.getUser().getUid());
     }
 
-    public void openInMaps(View view){ // Not necessary because it is implemented in the maps layout if you click on a marker.
+    public void openInMaps(View view){
+
         if (parkingLocation != null) {
             startActivity(
                     new Intent(
@@ -217,11 +236,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(56.2928882, 10.4692549), 6));
-        Toast.makeText(this, "Searching for location, please wait", Toast.LENGTH_SHORT).show();
-        updateMarkers();
-    }
 }
